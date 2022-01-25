@@ -30,69 +30,23 @@ Array.prototype.twoSum = function() {
         })
     })
 
-    // let arr = this;
-    // for(let i = 0; i < arr.length; i++) {
-    //     for(let j = i + 1; j < arr.length; j++) {
-    //         if (arr[i] + arr[j] === 0) {
-    //             result.push([i, j]);
-    //         }
-    //     }
-    // }
     return result;
 }
 
-// let arr2 = [1,-1, 2, 3, -3];
-// console.log(arr2.twoSum());
 
 Array.prototype.transpose = function() {
     const width = this.length; //2 
     const height = this[0].length; //3
-    const grid = [...Array(height)].map(function(innerArray) { 
+    const grid = [...Array(height)].map(function(innerArray)  { 
         return Array(width).fill(0);
     }); 
     // const grid = new Array(height)
-    debugger
-    console.log(grid);
-    // const arr = this; 
-    // arr.forEach (function(outerEl, outerIdx) {
-    //     arr.forEach (function(innerEl, innerIdx) {
-    //         grid[outerIdx][innerIdx] = [arr[innerIdx][outerIdx], arr[][]];
-    // //     })
-    // })
+    let that = this;
+    for (let i = 0; i < height; i++){
+        for (let j = 0; j < width; j++) {
+            grid[i][j] = that[j][i];
+        }
+    } 
+    return grid;   
 }
 
-// let arr = [[1,2,3], [4,5,6]];
-// arr.transpose();
-// [[], [], []]
-// el = []
-//     inner_array = arr[0][j]
-
-
-//     grid[0][0]
-//     grid[0][1]
-//     grid[0][2]
-//     grid[1][0]
-//     grid[1][1]
-//     grid[1][2]
-
-//     grid[0] = [array[0][0], array[1][0]]
-//     grid[0][1]
-//     grid[1][0]
-//     grid[1][1]
-//     grid[2][0]
-//     grid[2][1]
-
-//     grid[
-//         empty,
-//         empty,
-//         empty
-//     ]
-
-    
-//     for(let i = 0; i < 3; i++) { // outer
-//         for(let j = 0; j < 2; j++) {
-//             if (arr[i] + arr[j] === 0) {
-//                 result.push([i, j]);
-//             }
-//         }
-//     }
